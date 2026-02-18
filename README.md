@@ -39,6 +39,10 @@ Chowdhury, K. (2023). *Towards a Deep Learning Approach to Regularize Discourse 
 7. **Spam Identification on Facebook, Twitter and Email using Machine Learning**  
    Chowdhury, K. (2020). *CERES*, 19.
 
-8. **UdS Seminar: Identification of Tumor Patients with Deep Learning Approaches Based on microRNAs Measured in Blood Samples**
+8. **Identification of Tumor Patients with Deep Learning Approaches Based on microRNAs Measured in Blood Samples**  
+   Saarland University Seminar, Germany — [PrePrint](https://drive.google.com/file/d/1IOl0Je_kRX2xFUzsC-Ct0ZWLKwZGsGHX/view?usp=sharing)  
+   Chowdhury, K., Ritchie, H., & Yeh, H.-S. (2023). *Identification of tumor patients with deep learning approaches based on microRNAs measured in blood samples*. In Machine Learning Seminar, Chair for Clinical Bioinformatics, Saarland University, Germany.
 
-9. **Blink Detection from EOG & Eye-Tracking Signals: Literature & Software Review and Validation**
+9. **Blink Detection from EOG & Eye-Tracking Signals: Literature & Software Review and Validation**  
+   [PrePrint](https://drive.google.com/file/d/1ktvG-wgZUznqOXezWXfjXPMhSXwneT8k/view?usp=sharing)  
+   Chowdhury, K. *Blink Detection from EOG & Eye-Tracking Signals: Literature & Software Review and Validation*.
