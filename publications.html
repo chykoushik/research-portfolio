@@ -268,37 +268,85 @@
     color: #999;
   }
 
+  /* ── HIGHLIGHTED LINKS ── */
   .pub-links {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .pub-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: #666;
-    text-decoration: none;
-    transition: color 0.15s ease;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-  }
-
-  .pub-link:hover {
-    color: #1a1a1a;
-  }
-
-  .pub-link::after {
-    content: '→';
-    font-size: 10px;
-    opacity: 0;
-    transform: translateX(-4px);
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid;
     transition: all 0.15s ease;
+  }
+
+  /* DOI links - Blue */
+  .pub-link[href*="doi.org"],
+  .pub-link[href*="DOI"] {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #bfdbfe;
+  }
+
+  .pub-link[href*="doi.org"]:hover,
+  .pub-link[href*="DOI"]:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+
+  /* PDF links - Red */
+  .pub-link[href*="drive.google.com"],
+  .pub-link[href*="pdf"],
+  .pub-link[href*="PDF"] {
+    background: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+  }
+
+  .pub-link[href*="drive.google.com"]:hover,
+  .pub-link[href*="pdf"]:hover,
+  .pub-link[href*="PDF"]:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+  }
+
+  /* OSF/Zenodo links - Green */
+  .pub-link[href*="osf.io"],
+  .pub-link[href*="zenodo"],
+  .pub-link[href*="OSF"] {
+    background: #f0fdf4;
+    color: #16a34a;
+    border-color: #bbf7d0;
+  }
+
+  .pub-link[href*="osf.io"]:hover,
+  .pub-link[href*="zenodo"]:hover,
+  .pub-link[href*="OSF"]:hover {
+    background: #16a34a;
+    color: #fff;
+    border-color: #16a34a;
+  }
+
+  /* External link icon */
+  .pub-link::after {
+    content: '↗';
+    font-size: 10px;
+    opacity: 0.6;
   }
 
   .pub-link:hover::after {
     opacity: 1;
-    transform: translateX(0);
   }
 
   /* ── THESIS SPECIAL ── */
@@ -362,8 +410,14 @@
       margin: 0;
       padding: 20px 0;
     }
+    .pub-link {
+      background: none !important;
+      color: #1a1a1a !important;
+      border: 1px solid #999 !important;
+    }
   }
 </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -412,8 +466,8 @@
         <h3 class="pub-title">Towards a Deep Learning Approach to Regularize Discourse of Collaborative Learner</h3>
         <div class="pub-meta">Chowdhury, K. (2023). Center for Open Science — <em>OSF Preprints</em>.</div>
         <div class="pub-links">
-          <a class="pub-link" href="https://doi.org/10.31237/osf.io/hjk4b" target="_blank">View on OSF</a>
           <a class="pub-link" href="https://doi.org/10.31237/osf.io/hjk4b" target="_blank">DOI: 10.31237/osf.io/hjk4b</a>
+          <a class="pub-link" href="https://osf.io/hjk4b" target="_blank">View on OSF</a>
         </div>
       </div>
     </section>
@@ -437,7 +491,7 @@
 
         <div class="pub-item">
           <div class="pub-header">
-            <span class="pub-status review">Under Review</span>
+            <span class="pub-type">Review</span>
             <span class="pub-year">2024</span>
           </div>
           <h3 class="pub-title">Deep learning for blink detection: Literature review and experimental re-implementation</h3>
