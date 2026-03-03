@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications & Preprints — Koushik Chowdhury</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0d;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --rust: #b84c27;
+    --rust-light: #e8c4b4;
+    --gold: #c49a3c;
+    --muted: #7a7268;
+    --rule: #d0ccc4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.5;
+  }
+
+  .page-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 80px 40px 120px;
+  }
+
+  /* Header */
+  header {
+    margin-bottom: 72px;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  .header-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--rust);
+    margin-top: 28px;
+  }
+
+  /* Section */
+  section {
+    margin-bottom: 64px;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  section:nth-child(2) { animation-delay: 0.1s; }
+  section:nth-child(3) { animation-delay: 0.2s; }
+  section:nth-child(4) { animation-delay: 0.3s; }
+  section:nth-child(5) { animation-delay: 0.4s; }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .section-label h2 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .section-label::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: var(--rule);
+  }
+
+  /* Cards */
+  .pub-card {
+    background: white;
+    border: 1px solid var(--rule);
+    border-left: 3px solid transparent;
+    padding: 24px 28px;
+    margin-bottom: 14px;
+    border-radius: 2px;
+    transition: border-left-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    position: relative;
+  }
+
+  .pub-card:hover {
+    border-left-color: var(--rust);
+    box-shadow: 4px 4px 0 var(--rust-light);
+    transform: translateX(-2px);
+  }
+
+  .pub-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .pub-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .pub-meta {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .pub-meta em {
+    font-style: italic;
+    color: #5a5450;
+  }
+
+  .pub-meta strong {
+    font-weight: 500;
+    color: #4a4440;
+  }
+
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .badge-preprint {
+    background: var(--rust);
+    color: white;
+  }
+
+  .badge-preprint:hover {
+    background: #9a3d1e;
+  }
+
+  .badge-doi {
+    background: var(--cream);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+  }
+
+  .badge-doi:hover {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+
+  .badge-osf {
+    background: var(--gold);
+    color: white;
+  }
+
+  .badge-osf:hover {
+    background: #a07d2a;
+  }
+
+  /* Thesis special card */
+  .thesis-card {
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-left: 3px solid var(--rust);
+    padding: 32px 36px;
+    border-radius: 2px;
+  }
+
+  .thesis-card:hover {
+    border-left-color: var(--gold);
+    box-shadow: 4px 4px 0 rgba(196,154,60,0.3);
+    transform: translateX(-2px);
+  }
+
+  .thesis-card .pub-title {
+    color: white;
+    font-size: 1.15rem;
+  }
+
+  .thesis-card .pub-meta {
+    color: rgba(255,255,255,0.55);
+  }
+
+  .thesis-card .pub-meta em { color: rgba(255,255,255,0.7); }
+
+  .thesis-card .badge-doi {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .thesis-card .badge-doi:hover {
+    background: white;
+    color: var(--ink);
+  }
+
+  /* Status tag */
+  .status-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  .tag-review {
+    background: #fff3cd;
+    color: #7a5c00;
+    border: 1px solid #f0d060;
+  }
+
+  .tag-accepted {
+    background: #d4edda;
+    color: #1a5c2a;
+    border: 1px solid #8fc99a;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    animation: fadeUp 0.7s 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .page-wrap { padding: 48px 24px 80px; }
+    .pub-card { padding: 20px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <div class="eyebrow">Koushik Chowdhury</div>
+    <h1>Publications<br>&amp; <em>Preprints</em></h1>
+    <div class="header-rule"></div>
+  </header>
+
+  <!-- Master Thesis -->
+  <section>
+    <div class="section-label"><h2>Master Thesis</h2></div>
+    <div class="pub-card thesis-card">
+      <div class="pub-title">Towards a Deep Learning Approach to Regularize Discourse of Collaborative Learner</div>
+      <div class="pub-meta">
+        Chowdhury, K. (2023). Center for Open Science — OSF Preprints.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-doi" href="https://doi.org/10.31237/osf.io/hjk4b" target="_blank">DOI: 10.31237/osf.io/hjk4b</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journal -->
+  <section>
+    <div class="section-label"><h2>Journal</h2></div>
+
+    <div class="pub-card">
+      <div class="pub-number">01</div>
+      <span class="status-tag tag-review">Under Review — Springer Nature</span>
+      <div class="pub-title">Computational stratification and engineering translation of the pdcd1/cd2 immune axis in triple-negative breast cancer</div>
+      <div class="pub-meta">
+        Koushik Chowdhury. <em>Visual Computing for Industry, Biomedicine, and Art (Springer Nature)</em>, 2026.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-preprint" href="https://drive.google.com/file/d/1lQpJuaHO94wOTpU_BGkrr8A7eaoQY-_X/view" target="_blank">Preprint</a>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-number">02</div>
+      <span class="status-tag tag-review">Under Review</span>
+      <div class="pub-title">Deep learning for blink detection: Literature review and experimental re-implementation</div>
+      <div class="pub-meta">
+        Koushik Chowdhury.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-preprint" href="https://drive.google.com/file/d/1Sb7r5Gg9dz7BBToaI3C-xCF6509AwSNp/view" target="_blank">Preprint</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IEEE Conferences -->
+  <section>
+    <div class="section-label"><h2>IEEE Conferences</h2></div>
+
+    <div class="pub-card">
+      <div class="pub-number">01</div>
+      <span class="status-tag tag-accepted">Accepted — IEEE Xplore</span>
+      <div class="pub-title">A CNN-BiLSTM-GAT Model for Predicting RNA 3D Structures in the Stanford RNA Folding Challenge 2025</div>
+      <div class="pub-meta">
+        Chowdhury, K. (2025). <em>16th IEEE ICCCNT 2025</em>.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-osf" href="https://osf.io/v3km8" target="_blank">OSF: osf.io/v3km8</a>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-number">02</div>
+      <div class="pub-title">Adversarial Machine Learning: Attacking and Safeguarding Image Datasets</div>
+      <div class="pub-meta">
+        Chowdhury, K. (2024). <em>Proceedings of the 4th International Conference on Ubiquitous Computing and Intelligent Information Systems (ICUIS)</em>, Gobichettipalayam, India, pp. 1360–1365.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-doi" href="https://doi.org/10.1109/ICUIS64676.2024.10866337" target="_blank">DOI: 10.1109/ICUIS64676.2024.10866337</a>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-number">03</div>
+      <div class="pub-title">Adversarial Vulnerabilities and Defenses in Social Emotion Recognition</div>
+      <div class="pub-meta">
+        Chowdhury, K., &amp; Haydari, A. M. (2024). <em>Proceedings of the 19th International Workshop on Semantic and Social Media Adaptation &amp; Personalization (SMAP)</em>, Athens, Greece, pp. 92–97.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-doi" href="https://doi.org/10.1109/SMAP63474.2024.00026" target="_blank">DOI: 10.1109/SMAP63474.2024.00026</a>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-number">04</div>
+      <div class="pub-title">Predicting Autism Spectrum Disorder Using Machine Learning Classifiers</div>
+      <div class="pub-meta">
+        Chowdhury, K., &amp; Iraj, M. A. (2020). <em>Proceedings of the International Conference on Recent Trends on Electronics, Information, Communication &amp; Technology (RTEICT)</em>, Bangalore, India, pp. 324–327.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-doi" href="https://doi.org/10.1109/RTEICT49044.2020.9315717" target="_blank">DOI: 10.1109/RTEICT49044.2020.9315717</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preprints -->
+  <section>
+    <div class="section-label"><h2>Preprints</h2></div>
+
+    <div class="pub-card">
+      <div class="pub-number">01</div>
+      <div class="pub-title">Machine Learning Perspectives on the Human Microbiome</div>
+      <div class="pub-meta">
+        Chowdhury, K. (2021). <em>Zenodo Preprint</em>, December 2021.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-doi" href="https://doi.org/10.5281/zenodo.15243624" target="_blank">DOI: 10.5281/zenodo.15243624</a>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-number">02</div>
+      <div class="pub-title">Sentiment Analysis in Twitter Challenge</div>
+      <div class="pub-meta">
+        Chowdhury, K., Biswas, E., &amp; Hof, D. (2023). <em>Zenodo Preprint</em>, August 2023.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-doi" href="https://doi.org/10.5281/zenodo.15233598" target="_blank">DOI: 10.5281/zenodo.15233598</a>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-number">03</div>
+      <div class="pub-title">Spam Identification on Facebook, Twitter and Email using Machine Learning</div>
+      <div class="pub-meta">
+        Chowdhury, K. (2020). <em>CERES</em>, 19.
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-number">04</div>
+      <div class="pub-title">Identification of Tumor Patients with Deep Learning Approaches Based on microRNAs Measured in Blood Samples</div>
+      <div class="pub-meta">
+        Chowdhury, K., Ritchie, H., &amp; Yeh, H.-S. (2023). <em>Machine Learning Seminar, Chair for Clinical Bioinformatics, Saarland University, Germany</em>.
+      </div>
+      <div class="pub-links">
+        <a class="badge badge-preprint" href="https://drive.google.com/file/d/1IOl0Je_kRX2xFUzsC-Ct0ZWLKwZGsGHX/view?usp=sharing" target="_blank">Preprint</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    Koushik Chowdhury &nbsp;·&nbsp; Publications &amp; Preprints &nbsp;·&nbsp; Last updated 2026
+  </footer>
+
+</div>
+</body>
+</html>
