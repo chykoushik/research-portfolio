@@ -271,8 +271,6 @@
   .pub-links {
     display: flex;
     gap: 16px;
-    flex-wrap: wrap; /* helps on small screens */
-    align-items: center;
   }
 
   .pub-link {
@@ -301,42 +299,6 @@
   .pub-link:hover::after {
     opacity: 1;
     transform: translateX(0);
-  }
-
-  /* ── DOI HIGHLIGHT (NEW) ── */
-  .doi-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-
-    background: #1a1a1a;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 999px; /* pill */
-    border: 1px solid #1a1a1a;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-  }
-
-  .doi-badge::after {
-    content: '↗';
-    font-size: 11px;
-    opacity: 0.9;
-  }
-
-  .doi-badge:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    background: #000;
-    border-color: #000;
-  }
-
-  .doi-badge:focus-visible {
-    outline: 2px solid #1a1a1a;
-    outline-offset: 3px;
   }
 
   /* ── THESIS SPECIAL ── */
@@ -400,13 +362,6 @@
       margin: 0;
       padding: 20px 0;
     }
-    .doi-badge {
-      background: none !important;
-      color: #1a1a1a !important;
-      border: 1px solid #999 !important;
-      box-shadow: none !important;
-      transform: none !important;
-    }
   }
 </style>
 <base target="_blank">
@@ -457,10 +412,8 @@
         <h3 class="pub-title">Towards a Deep Learning Approach to Regularize Discourse of Collaborative Learner</h3>
         <div class="pub-meta">Chowdhury, K. (2023). Center for Open Science — <em>OSF Preprints</em>.</div>
         <div class="pub-links">
-          <a class="pub-link" href="https://doi.org/10.31237/osf.io/hjk4b">View on OSF</a>
-          <a class="doi-badge" href="https://doi.org/10.31237/osf.io/hjk4b" aria-label="Open DOI 10.31237/osf.io/hjk4b">
-            DOI: 10.31237/osf.io/hjk4b
-          </a>
+          <a class="pub-link" href="https://doi.org/10.31237/osf.io/hjk4b" target="_blank">View on OSF</a>
+          <a class="pub-link" href="https://doi.org/10.31237/osf.io/hjk4b" target="_blank">DOI: 10.31237/osf.io/hjk4b</a>
         </div>
       </div>
     </section>
@@ -478,7 +431,7 @@
           <h3 class="pub-title">Computational stratification and engineering translation of the pdcd1/cd2 immune axis in triple-negative breast cancer</h3>
           <div class="pub-meta">Koushik Chowdhury. <em>Visual Computing for Industry, Biomedicine, and Art (Springer Nature)</em>.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://drive.google.com/file/d/1lQpJuaHO94wOTpU_BGkrr8A7eaoQY-_X/view">Preprint PDF</a>
+            <a class="pub-link" href="https://drive.google.com/file/d/1lQpJuaHO94wOTpU_BGkrr8A7eaoQY-_X/view" target="_blank">Preprint PDF</a>
           </div>
         </div>
 
@@ -490,7 +443,7 @@
           <h3 class="pub-title">Deep learning for blink detection: Literature review and experimental re-implementation</h3>
           <div class="pub-meta">Koushik Chowdhury. <em>Preprint</em>.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://drive.google.com/file/d/1Sb7r5Gg9dz7BBToaI3C-xCF6509AwSNp/view">Preprint PDF</a>
+            <a class="pub-link" href="https://drive.google.com/file/d/1Sb7r5Gg9dz7BBToaI3C-xCF6509AwSNp/view" target="_blank">Preprint PDF</a>
           </div>
         </div>
       </div>
@@ -509,7 +462,7 @@
           <h3 class="pub-title">A CNN-BiLSTM-GAT Model for Predicting RNA 3D Structures in the Stanford RNA Folding Challenge 2025</h3>
           <div class="pub-meta">Chowdhury, K. (2025). <em>16th IEEE ICCCNT 2025</em>.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://osf.io/v3km8">OSF Repository</a>
+            <a class="pub-link" href="https://osf.io/v3km8" target="_blank">OSF Repository</a>
           </div>
         </div>
 
@@ -521,7 +474,7 @@
           <h3 class="pub-title">Adversarial Machine Learning: Attacking and Safeguarding Image Datasets</h3>
           <div class="pub-meta">Chowdhury, K. (2024). <em>Proceedings of the 4th International Conference on Ubiquitous Computing and Intelligent Information Systems (ICUIS)</em>, Gobichettipalayam, India, pp. 1360–1365.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://doi.org/10.1109/ICUIS64676.2024.10866337">DOI: 10.1109/ICUIS64676.2024.10866337</a>
+            <a class="pub-link" href="https://doi.org/10.1109/ICUIS64676.2024.10866337" target="_blank">DOI: 10.1109/ICUIS64676.2024.10866337</a>
           </div>
         </div>
 
@@ -533,7 +486,7 @@
           <h3 class="pub-title">Adversarial Vulnerabilities and Defenses in Social Emotion Recognition</h3>
           <div class="pub-meta">Chowdhury, K., &amp; Haydari, A. M. (2024). <em>Proceedings of the 19th International Workshop on Semantic and Social Media Adaptation &amp; Personalization (SMAP)</em>, Athens, Greece, pp. 92–97.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://doi.org/10.1109/SMAP63474.2024.00026">DOI: 10.1109/SMAP63474.2024.00026</a>
+            <a class="pub-link" href="https://doi.org/10.1109/SMAP63474.2024.00026" target="_blank">DOI: 10.1109/SMAP63474.2024.00026</a>
           </div>
         </div>
 
@@ -545,7 +498,7 @@
           <h3 class="pub-title">Predicting Autism Spectrum Disorder Using Machine Learning Classifiers</h3>
           <div class="pub-meta">Chowdhury, K., &amp; Iraj, M. A. (2020). <em>Proceedings of the International Conference on Recent Trends on Electronics, Information, Communication &amp; Technology (RTEICT)</em>, Bangalore, India, pp. 324–327.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://doi.org/10.1109/RTEICT49044.2020.9315717">DOI: 10.1109/RTEICT49044.2020.9315717</a>
+            <a class="pub-link" href="https://doi.org/10.1109/RTEICT49044.2020.9315717" target="_blank">DOI: 10.1109/RTEICT49044.2020.9315717</a>
           </div>
         </div>
       </div>
@@ -563,7 +516,7 @@
           <h3 class="pub-title">Machine Learning Perspectives on the Human Microbiome</h3>
           <div class="pub-meta">Chowdhury, K. (2021). <em>Zenodo Preprint</em>, December 2021.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://doi.org/10.5281/zenodo.15243624">DOI: 10.5281/zenodo.15243624</a>
+            <a class="pub-link" href="https://doi.org/10.5281/zenodo.15243624" target="_blank">DOI: 10.5281/zenodo.15243624</a>
           </div>
         </div>
 
@@ -575,7 +528,7 @@
           <h3 class="pub-title">Sentiment Analysis in Twitter Challenge</h3>
           <div class="pub-meta">Chowdhury, K., Biswas, E., &amp; Hof, D. (2023). <em>Zenodo Preprint</em>, August 2023.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://doi.org/10.5281/zenodo.15233598">DOI: 10.5281/zenodo.15233598</a>
+            <a class="pub-link" href="https://doi.org/10.5281/zenodo.15233598" target="_blank">DOI: 10.5281/zenodo.15233598</a>
           </div>
         </div>
 
@@ -596,7 +549,7 @@
           <h3 class="pub-title">Identification of Tumor Patients with Deep Learning Approaches Based on microRNAs Measured in Blood Samples</h3>
           <div class="pub-meta">Chowdhury, K., Ritchie, H., &amp; Yeh, H.-S. (2023). <em>Machine Learning Seminar, Chair for Clinical Bioinformatics, Saarland University, Germany</em>.</div>
           <div class="pub-links">
-            <a class="pub-link" href="https://drive.google.com/file/d/1IOl0Je_kRX2xFUzsC-Ct0ZWLKwZGsGHX/view?usp=sharing">Preprint PDF</a>
+            <a class="pub-link" href="https://drive.google.com/file/d/1IOl0Je_kRX2xFUzsC-Ct0ZWLKwZGsGHX/view?usp=sharing" target="_blank">Preprint PDF</a>
           </div>
         </div>
       </div>
