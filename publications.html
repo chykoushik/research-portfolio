@@ -89,6 +89,7 @@
     font-size: 14px;
     color: #555;
     transition: all 0.15s ease;
+    cursor: pointer;
   }
 
   nav a:hover {
@@ -155,6 +156,7 @@
   .section {
     margin-bottom: 48px;
     page-break-inside: avoid;
+    scroll-margin-top: 40px;
   }
 
   .section-title {
@@ -339,13 +341,13 @@
   }
 
   /* External link icon */
-  .pub-link::after {
+  .pub-link[target="_blank"]::after {
     content: '↗';
     font-size: 10px;
     opacity: 0.6;
   }
 
-  .pub-link:hover::after {
+  .pub-link[target="_blank"]:hover::after {
     opacity: 1;
   }
 
@@ -418,7 +420,6 @@
   }
 </style>
 <base target="_blank">
-<base target="_blank">
 </head>
 <body>
 <div class="layout">
@@ -434,10 +435,10 @@
       <div class="nav-label">Contents</div>
       <nav>
         <ul>
-          <li><a href="#thesis" class="active">Master Thesis <span class="nav-count">1</span></a></li>
-          <li><a href="#journal">Journal Articles <span class="nav-count">2</span></a></li>
-          <li><a href="#ieee">IEEE Conferences <span class="nav-count">4</span></a></li>
-          <li><a href="#preprints">Preprints <span class="nav-count">4</span></a></li>
+          <li><a data-section="thesis" class="active">Master Thesis <span class="nav-count">1</span></a></li>
+          <li><a data-section="journal">Journal Articles <span class="nav-count">2</span></a></li>
+          <li><a data-section="ieee">IEEE Conferences <span class="nav-count">4</span></a></li>
+          <li><a data-section="preprints">Preprints <span class="nav-count">4</span></a></li>
         </ul>
       </nav>
     </div>
@@ -613,14 +614,31 @@
 </div>
 
 <script>
+  // Smooth scroll navigation
+  document.querySelectorAll('nav a[data-section]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const sectionId = this.getAttribute('data-section');
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Update active state
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+
+  // Update active nav on scroll
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a');
+  const navLinks = document.querySelectorAll('nav a[data-section]');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(a => a.classList.remove('active'));
-        const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+        const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
         if (active) active.classList.add('active');
       }
     });
