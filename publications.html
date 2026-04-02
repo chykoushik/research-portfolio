@@ -444,9 +444,9 @@
     </div>
 
     <div class="sidebar-footer">
-      Updated March 2026
+  Updated March 2026<br>
+  Total views: <span id="view-count">—</span>
     </div>
-  </aside>
 
   <!-- MAIN -->
   <main class="main">
@@ -646,6 +646,17 @@
   }, { rootMargin: '-20% 0px -60% 0px' });
 
   sections.forEach(s => observer.observe(s));
+</script>
+
+ <script>
+  fetch("https://api.countapi.xyz/hit/koushik-publications/visits")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("view-count").textContent = data.value.toLocaleString();
+    })
+    .catch(() => {
+      document.getElementById("view-count").textContent = "N/A";
+    });
 </script>
 
 </body>
