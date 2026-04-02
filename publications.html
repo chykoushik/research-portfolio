@@ -24,7 +24,7 @@
     min-height: 100vh;
   }
 
-  /* ── SIDEBAR ── */
+  /* SIDEBAR */
   .sidebar {
     width: 260px;
     flex-shrink: 0;
@@ -76,7 +76,6 @@
   }
 
   nav ul { list-style: none; }
-
   nav li { margin-bottom: 2px; }
 
   nav a {
@@ -124,9 +123,10 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     color: #999;
+    line-height: 1.8;
   }
 
-  /* ── MAIN ── */
+  /* MAIN */
   .main {
     flex: 1;
     margin-left: 260px;
@@ -152,7 +152,7 @@
     line-height: 1.5;
   }
 
-  /* ── SECTION ── */
+  /* SECTION */
   .section {
     margin-bottom: 48px;
     page-break-inside: avoid;
@@ -171,7 +171,7 @@
     border-bottom: 1px solid #e5e5e5;
   }
 
-  /* ── PUBLICATION ITEMS ── */
+  /* PUBLICATION ITEMS */
   .pub-list {
     display: flex;
     flex-direction: column;
@@ -184,9 +184,7 @@
     transition: background 0.15s ease;
   }
 
-  .pub-item:first-child {
-    padding-top: 0;
-  }
+  .pub-item:first-child { padding-top: 0; }
 
   .pub-item:hover {
     background: #fafafa;
@@ -254,9 +252,7 @@
     letter-spacing: -0.2px;
   }
 
-  .pub-item:hover .pub-title {
-    color: #000;
-  }
+  .pub-item:hover .pub-title { color: #000; }
 
   .pub-meta {
     font-size: 13px;
@@ -270,7 +266,7 @@
     color: #999;
   }
 
-  /* ── HIGHLIGHTED LINKS ── */
+  /* LINKS */
   .pub-links {
     display: flex;
     flex-wrap: wrap;
@@ -291,22 +287,17 @@
     transition: all 0.15s ease;
   }
 
-  /* DOI links - Blue */
-  .pub-link[href*="doi.org"],
-  .pub-link[href*="DOI"] {
+  .pub-link[href*="doi.org"] {
     background: #eff6ff;
     color: #2563eb;
     border-color: #bfdbfe;
   }
-
-  .pub-link[href*="doi.org"]:hover,
-  .pub-link[href*="DOI"]:hover {
+  .pub-link[href*="doi.org"]:hover {
     background: #2563eb;
     color: #fff;
     border-color: #2563eb;
   }
 
-  /* PDF links - Red */
   .pub-link[href*="drive.google.com"],
   .pub-link[href*="pdf"],
   .pub-link[href*="PDF"] {
@@ -314,7 +305,6 @@
     color: #dc2626;
     border-color: #fecaca;
   }
-
   .pub-link[href*="drive.google.com"]:hover,
   .pub-link[href*="pdf"]:hover,
   .pub-link[href*="PDF"]:hover {
@@ -323,35 +313,38 @@
     border-color: #dc2626;
   }
 
-  /* OSF/Zenodo links - Green */
   .pub-link[href*="osf.io"],
-  .pub-link[href*="zenodo"],
-  .pub-link[href*="OSF"] {
+  .pub-link[href*="zenodo"] {
     background: #f0fdf4;
     color: #16a34a;
     border-color: #bbf7d0;
   }
-
   .pub-link[href*="osf.io"]:hover,
-  .pub-link[href*="zenodo"]:hover,
-  .pub-link[href*="OSF"]:hover {
+  .pub-link[href*="zenodo"]:hover {
     background: #16a34a;
     color: #fff;
     border-color: #16a34a;
   }
 
-  /* External link icon */
+  .pub-link-default {
+    background: #f5f5f5;
+    color: #555;
+    border-color: #e0e0e0;
+  }
+  .pub-link-default:hover {
+    background: #555;
+    color: #fff;
+    border-color: #555;
+  }
+
   .pub-link[target="_blank"]::after {
     content: '↗';
     font-size: 10px;
     opacity: 0.6;
   }
+  .pub-link[target="_blank"]:hover::after { opacity: 1; }
 
-  .pub-link[target="_blank"]:hover::after {
-    opacity: 1;
-  }
-
-  /* ── THESIS SPECIAL ── */
+  /* THESIS */
   .thesis-box {
     background: #fafafa;
     border: 1px solid #e5e5e5;
@@ -367,14 +360,8 @@
   }
 
   @media (max-width: 900px) {
-    .sidebar {
-      width: 220px;
-      padding: 32px 20px;
-    }
-    .main {
-      margin-left: 220px;
-      padding: 40px 40px 80px;
-    }
+    .sidebar { width: 220px; padding: 32px 20px; }
+    .main { margin-left: 220px; padding: 40px 40px 80px; }
   }
 
   @media (max-width: 768px) {
@@ -387,39 +374,19 @@
       border-right: none;
       border-bottom: 1px solid #e5e5e5;
     }
-    .main {
-      margin-left: 0;
-      padding: 32px 24px;
-    }
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .main { margin-left: 0; padding: 32px 24px; }
+    nav ul { display: flex; flex-wrap: wrap; gap: 8px; }
     nav li { margin-bottom: 0; }
     .sidebar-footer { display: none; }
   }
 
   @media print {
     .sidebar { display: none; }
-    .main {
-      margin-left: 0;
-      padding: 0;
-      max-width: none;
-    }
-    .pub-item:hover {
-      background: none;
-      margin: 0;
-      padding: 20px 0;
-    }
-    .pub-link {
-      background: none !important;
-      color: #1a1a1a !important;
-      border: 1px solid #999 !important;
-    }
+    .main { margin-left: 0; padding: 0; max-width: none; }
+    .pub-item:hover { background: none; margin: 0; padding: 20px 0; }
+    .pub-link { background: none !important; color: #1a1a1a !important; border: 1px solid #999 !important; }
   }
 </style>
-<base target="_blank">
 </head>
 <body>
 <div class="layout">
@@ -444,9 +411,10 @@
     </div>
 
     <div class="sidebar-footer">
-  Updated March 2026<br>
-  Total views: <span id="view-count">—</span>
+      Updated March 2026<br>
+      Total views: <span id="view-count">—</span>
     </div>
+  </aside>
 
   <!-- MAIN -->
   <main class="main">
@@ -477,6 +445,7 @@
     <section class="section" id="journal">
       <div class="section-title">Journal Articles</div>
       <div class="pub-list">
+
         <div class="pub-item">
           <div class="pub-header">
             <span class="pub-type">Journal</span>
@@ -487,7 +456,7 @@
           <div class="pub-meta">Koushik Chowdhury. <em>Springer Nature</em>.</div>
           <div class="pub-links">
             <a class="pub-link" href="https://drive.google.com/file/d/1U3ag8CBoLdotjLxbrmWIbYQkmgYH2pzp/view?usp=sharing" target="_blank">Preprint PDF</a>
-            <a class="pub-link" href="https://chykoushik.github.io/tnbc-pdcd1-cd2-scrna-pipeline/tnbc_dashboard.html" target="_blank">Visual Dashboard</a>
+            <a class="pub-link pub-link-default" href="https://chykoushik.github.io/tnbc-pdcd1-cd2-scrna-pipeline/tnbc_dashboard.html" target="_blank">Visual Dashboard</a>
           </div>
         </div>
 
@@ -497,11 +466,12 @@
             <span class="pub-year">2024</span>
           </div>
           <h3 class="pub-title">Bridging Sensor Domains: Cross-Modal Transfer and Blink Detection Generalization Between EOG and Eye-Tracking Signals</h3>
-          <div class="pub-meta">Koushik Chowdhury. <em></em>.</div>
+          <div class="pub-meta">Koushik Chowdhury.</div>
           <div class="pub-links">
-            <a class="pub-link" href="" target="_blank">Upon request</a>
+            <a class="pub-link pub-link-default" href="#" onclick="return false;">Upon request</a>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -509,6 +479,7 @@
     <section class="section" id="ieee">
       <div class="section-title">IEEE Conferences</div>
       <div class="pub-list">
+
         <div class="pub-item">
           <div class="pub-header">
             <span class="pub-type">Conference</span>
@@ -557,6 +528,7 @@
             <a class="pub-link" href="https://doi.org/10.1109/RTEICT49044.2020.9315717" target="_blank">DOI: 10.1109/RTEICT49044.2020.9315717</a>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -564,6 +536,7 @@
     <section class="section" id="preprints">
       <div class="section-title">Preprints</div>
       <div class="pub-list">
+
         <div class="pub-item">
           <div class="pub-header">
             <span class="pub-type">Preprint</span>
@@ -608,6 +581,7 @@
             <a class="pub-link" href="https://drive.google.com/file/d/1IOl0Je_kRX2xFUzsC-Ct0ZWLKwZGsGHX/view?usp=sharing" target="_blank">Preprint PDF</a>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -623,8 +597,6 @@
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Update active state
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
         this.classList.add('active');
       }
@@ -646,16 +618,15 @@
   }, { rootMargin: '-20% 0px -60% 0px' });
 
   sections.forEach(s => observer.observe(s));
-</script>
 
- <script>
-  fetch("https://api.countapi.xyz/hit/koushik-publications/visits")
+  // View counter using counterapi.dev (free, no signup needed)
+  fetch('https://api.counterapi.dev/v1/chykoushik-publications/views/up')
     .then(res => res.json())
     .then(data => {
-      document.getElementById("view-count").textContent = data.value.toLocaleString();
+      document.getElementById('view-count').textContent = data.count.toLocaleString();
     })
     .catch(() => {
-      document.getElementById("view-count").textContent = "N/A";
+      document.getElementById('view-count').textContent = 'N/A';
     });
 </script>
 
