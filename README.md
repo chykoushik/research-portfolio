@@ -14,6 +14,8 @@ Chowdhury, K. (2023). *Towards a Deep Learning Approach to Regularize Discourse 
 
 2. Koushik Chowdhury. **Bridging Sensor Domains: Cross-Modal Transfer and Blink Detection Generalization Between EOG and Eye-Tracking Signals.** . [Upon request]
 
+3. Koushik Chowdhury. **Multimodal Adversarial Sensitivity Maps as Biological Probes for Triple Negative Breast Cancer Characterization** . In *Under review*,  [Upon request]
+
 ---
 
 ## IEEE Conferences
