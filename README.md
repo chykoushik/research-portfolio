@@ -10,7 +10,7 @@ Chowdhury, K. (2023). *Towards a Deep Learning Approach to Regularize Discourse 
 
 ## Journal
 
-1. Koushik Chowdhury. **Computational stratification and engineering translation of the pdcd1/cd2 immune axis in triple-negative breast cancer.** In *Under review: (Springer Nature)*, 2026. [Preprint](https://drive.google.com/file/d/1U3ag8CBoLdotjLxbrmWIbYQkmgYH2pzp/view)
+1. Chowdhury, K. Computational stratification and engineering framework of the PDCD1/CD2 immune axis in triple-negative breast cancer. Clin. Cancer Bull. 5, 11 (2026). https://doi.org/10.1007/s44272-026-00063-5
 
 2. Koushik Chowdhury. **Bridging Sensor Domains: Cross-Modal Transfer and Blink Detection Generalization Between EOG and Eye-Tracking Signals.** . [Upon request]
 
